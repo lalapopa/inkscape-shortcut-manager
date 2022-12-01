@@ -116,8 +116,8 @@ def paste_style(self, combination):
     # Stolen from TikZ
     pt = 1.327 # pixels
     w = 0.4 * pt
-    thick_width = 0.8 * pt
-    very_thick_width = 1.2 * pt
+    thick_width = 0.75 * pt
+    very_thick_width = 1.4 * pt
 
     style = {
         'stroke-opacity': 1
@@ -190,19 +190,21 @@ def paste_style(self, combination):
             ('marker-start' in style and style['marker-start'] != 'none'):
         svg += f'''
                 <defs id="marker-defs">
-                <marker
-                id="marker-arrow-{w}"
-                orient="auto-start-reverse"
-                refY="0" refX="0"
-                markerHeight="1.690" markerWidth="0.911">
-                  <g transform="scale({(2.40 * w + 3.87)/(4.5*w)})">
-                    <path
-                       d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722"
-                       style="fill:none;stroke:#000000;stroke-width:{0.6};stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                       inkscape:connector-curvature="0" />
-                   </g>
-                </marker>
-                </defs>
+                    <marker
+       style="overflow:visible"
+       id="marker-arrow-{w}"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1025-6" />
+    </marker>
+</defs>
                 '''
 
     style_string = ';'.join('{}: {}'.format(key, value)
